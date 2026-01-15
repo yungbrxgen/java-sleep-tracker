@@ -21,7 +21,7 @@ public class SleepTrackerAppTest {
     }
 
     @Test
-    public void ShouldBeReturnMaxDuration() {
+    public void shouldBeReturnMaxDuration() {
         List<SleepingSession> sessions = Arrays.asList(
                 createSession("01.12.25 23:00", "02.12.25 07:20", Quality.GOOD),
                 createSession("02.12.25 23:00", "03.12.25 04:00", Quality.BAD),
@@ -35,7 +35,7 @@ public class SleepTrackerAppTest {
     }
 
     @Test
-    public void ShouldBeReturnMaxDurationIfOnlyOneSession() {
+    public void shouldBeReturnMaxDurationIfOnlyOneSession() {
         List<SleepingSession> sessions = List.of(
                 createSession("01.12.25 23:00", "02.12.25 07:20", Quality.GOOD)
         );
@@ -47,7 +47,7 @@ public class SleepTrackerAppTest {
     }
 
     @Test
-    public void ShouldBeReturnMinDuration() {
+    public void shouldBeReturnMinDuration() {
         List<SleepingSession> sessions = Arrays.asList(
                 createSession("01.12.25 23:00", "02.12.25 07:20", Quality.GOOD),
                 createSession("02.12.25 23:00", "03.12.25 04:00", Quality.BAD),
@@ -61,7 +61,7 @@ public class SleepTrackerAppTest {
     }
 
     @Test
-    public void ShouldBeReturnMinDurationIfOnlyOneSession() {
+    public void shouldBeReturnMinDurationIfOnlyOneSession() {
         List<SleepingSession> sessions = List.of(
                 createSession("02.12.25 23:00", "03.12.25 04:00", Quality.BAD)
         );
@@ -73,7 +73,7 @@ public class SleepTrackerAppTest {
     }
 
     @Test
-    public void TotalSleepingFunctionTest() {
+    public void totalSleepingFunctionTest() {
         List<SleepingSession> sessions = Arrays.asList(
                 createSession("01.12.25 23:00", "02.12.25 07:20", Quality.GOOD),
                 createSession("02.12.25 23:00", "03.12.25 04:00", Quality.BAD),
@@ -87,7 +87,7 @@ public class SleepTrackerAppTest {
     }
 
     @Test
-    public void TotalSleepingFunctionEmptyList() {
+    public void totalSleepingFunctionEmptyList() {
         List<SleepingSession> sessions = Arrays.asList();
 
         TotalSleepingFunction totalSleepingFunction = new TotalSleepingFunction();
@@ -97,7 +97,7 @@ public class SleepTrackerAppTest {
     }
 
     @Test
-    public void SleepDurationAverageTest() {
+    public void sleepDurationAverageTest() {
         List<SleepingSession> sessions = Arrays.asList(
                 createSession("01.12.25 23:00", "02.12.25 07:20", Quality.GOOD),
                 createSession("02.12.25 23:00", "03.12.25 04:00", Quality.BAD),
@@ -111,7 +111,7 @@ public class SleepTrackerAppTest {
     }
 
     @Test
-    public void SleepDurationAverageEmptyList() {
+    public void sleepDurationAverageEmptyList() {
         List<SleepingSession> sessions = List.of();
 
         SleepDurationAverage sleepDurationAverage = new SleepDurationAverage();
@@ -121,7 +121,7 @@ public class SleepTrackerAppTest {
     }
 
     @Test
-    public void BadSleepingSessionsCountTest() {
+    public void badSleepingSessionsCountTest() {
         List<SleepingSession> sessions = Arrays.asList(
                 createSession("01.12.25 23:00", "02.12.25 09:20", Quality.BAD),
                 createSession("03.12.25 07:00", "03.12.25 13:20", Quality.BAD),
@@ -135,7 +135,7 @@ public class SleepTrackerAppTest {
     }
 
     @Test
-    public void BadSleepingSessionsCountIsNull() {
+    public void badSleepingSessionsCountIsNull() {
         List<SleepingSession> sessions = Arrays.asList(
                 createSession("01.12.25 23:00", "02.12.25 07:20", Quality.GOOD),
                 createSession("02.12.25 23:00", "03.12.25 04:00", Quality.BAD),
@@ -149,7 +149,7 @@ public class SleepTrackerAppTest {
     }
 
     @Test
-    public void SleepingChronotypeTestOwl() {
+    public void sleepingChronotypeTestOwl() {
         List<SleepingSession> sessions = Arrays.asList(
                 createSession("01.12.25 23:30", "02.12.25 09:20", Quality.GOOD),
                 createSession("02.12.25 23:50", "03.12.25 10:00", Quality.GOOD)
@@ -163,7 +163,7 @@ public class SleepTrackerAppTest {
     }
 
     @Test
-    public void SleepingChronotypePigeonIfEvenly() {
+    public void sleepingChronotypePigeonIfEvenly() {
         List<SleepingSession> sessions = Arrays.asList(
                 createSession("01.12.25 23:30", "02.12.25 09:20", Quality.GOOD),
                 createSession("02.12.25 23:50", "03.12.25 10:00", Quality.NORMAL),
