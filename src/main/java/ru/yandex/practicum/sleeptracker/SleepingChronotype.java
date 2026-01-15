@@ -46,11 +46,7 @@ public class SleepingChronotype implements Function<List<SleepingSession>, Sleep
 
         if (bedTime.isAfter(LocalTime.of(23, 0)) && wakeTime.isAfter(LocalTime.of(9, 0))) {
             return "Сова";
-<<<<<<< HEAD
         } else if (bedTime.isBefore(LocalTime.of(22, 0)) && wakeTime.isBefore(LocalTime.of(7, 0))) {
-=======
-        } else if (bedTime.isBefore(LocalTime.of(22,0)) && wakeTime.isBefore(LocalTime.of(7,0))) {
->>>>>>> 9ec989a85540a4400da84abb01b64fc97a899b4f
             return "Жаворонок";
         } else {
             return "Голубь";

@@ -12,11 +12,10 @@ public class SleepDurationAverage implements Function<List<SleepingSession>, Sle
                 .average()
                 .orElse(0);
 
-<<<<<<< HEAD
+
         Long average = (long) averageDuration;
-=======
-        Long average = (long)averageDuration;
->>>>>>> 9ec989a85540a4400da84abb01b64fc97a899b4f
+
+
         return new SleepAnalysisResult("Средняя продолжительность сна (мин)", average);
     }
 }

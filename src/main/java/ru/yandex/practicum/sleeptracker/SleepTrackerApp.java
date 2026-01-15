@@ -36,7 +36,6 @@ public class SleepTrackerApp {
                 .map(function -> function.apply(sessions))
                 .forEach((System.out::println));
     }
-<<<<<<< HEAD
 
     List<SleepingSession> loadSession(String path) {
 
@@ -54,23 +53,5 @@ public class SleepTrackerApp {
             System.out.println("Ошибка при чтении файла: " + e.getMessage());
             return Collections.emptyList();
         }
-=======
-        List<SleepingSession> loadSession(String path) {
-
-            try (Stream<String> lines = Files.lines(Path.of(path))) {
-                 return lines
-                         .filter(line -> !line.isBlank())
-                .map(line -> {
-                 String[] splitLine = line.split(";");
-                     LocalDateTime start = LocalDateTime.parse(splitLine[0], FORMATTER);
-                     LocalDateTime end  = LocalDateTime.parse(splitLine[1], FORMATTER);
-                     Quality type = Quality.valueOf(splitLine[2]);
-                     return new SleepingSession(start, end, type);
-                }).collect(Collectors.toList());
-            } catch (IOException e) {
-                System.out.println("Ошибка при чтении файла: " + e.getMessage());
-                return Collections.emptyList();
-            }
->>>>>>> 9ec989a85540a4400da84abb01b64fc97a899b4f
     }
 }
