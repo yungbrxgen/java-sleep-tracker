@@ -1,6 +1,7 @@
 package ru.yandex.practicum.sleeptracker;
 
 import org.junit.jupiter.api.Test;
+import ru.yandex.practicum.sleeptracker.function.*;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -147,6 +148,32 @@ public class SleepTrackerAppTest {
         String expected = "Количество бессонных ночей: 0";
         assertEquals(expected, result.toString());
     }
+
+    @Test
+    public void badSleepingSessionsDifferentMonths() {
+        List<SleepingSession> sessions = Arrays.asList(
+                createSession("31.12.25 23:00", "01.01.26 09:20", Quality.BAD),
+                createSession("02.01.26 07:00", "02.01.26 13:20", Quality.BAD),
+                createSession("03.01.26 11:00", "03.01.26 16:40", Quality.NORMAL)
+        );
+
+        BadSleepingSessions badSleepingSessions = new BadSleepingSessions();
+        SleepAnalysisResult result = badSleepingSessions.apply(sessions);
+        String expected = "Количество бессонных ночей: 2";
+        assertEquals(expected, result.toString());
+    }
+
+    @Test
+    public void badSleepingSessionsEmptyFile() {
+        List<SleepingSession> sessions = List.of();
+
+        BadSleepingSessions badSleepingSessions = new BadSleepingSessions();
+        SleepAnalysisResult result = badSleepingSessions.apply(sessions);
+        String expected = "Количество бессонных ночей: 0";
+        assertEquals(expected, result.toString());
+    }
+
+
 
     @Test
     public void sleepingChronotypeTestOwl() {
